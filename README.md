@@ -1,1 +1,1 @@
-# proofofknowledge
+# Proof of Knowledge - BlockGeeks
