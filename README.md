@@ -1,1 +1,1 @@
-# Proof of Knowledge - BlockGeeks
+# Proof of Knowledge - Bounty.one
