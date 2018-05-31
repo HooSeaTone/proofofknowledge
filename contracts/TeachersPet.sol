@@ -35,6 +35,8 @@ contract TeachersPet is StandardToken {
     _;
   }
 
+  event MilestoneAwarded(address _to, uint amount, bytes32 milestone, bytes32 _tags);
+
   function addAdministrator(address _newAdmin) onlyAdmin public {
     require(_newAdmin > 0);
     admins[keccak256(_newAdmin)] = true;
@@ -91,6 +93,7 @@ contract TeachersPet is StandardToken {
     students[_student].tokensReceived += milestones[_title].reward;
     approve(_student, milestones[_title].reward);
     transfer(_student, milestones[_title].reward);
+    emit MilestoneAwarded(_student, milestones[_title].reward, _title, milestones[_title].tags);
   }
 
   function createStudent(address _address, bytes32 _id) public {
