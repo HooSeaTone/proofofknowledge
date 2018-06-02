@@ -7,13 +7,13 @@ contract TeachersPet is StandardToken {
   string public symbol = "POOOOKEE";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 10000 * (10 ** decimals);
+  address public owner;
 
   constructor() public {
     totalSupply_ = INITIAL_SUPPLY;
     balances[msg.sender] = INITIAL_SUPPLY;
+    owner = msg.sender;
   }
-
-  address owner = msg.sender;
 
   struct Milestone {
     uint reward;
