@@ -90,8 +90,7 @@ contract TeachersPet is StandardToken {
 
     require(duplicate == false);
     students[_student].milestones.push(_title);
-    students[_student].tokensReceived += milestones[_title].reward;
-    approve(_student, milestones[_title].reward);
+    students[_student].tokensReceived += milestones[_title].reward;    
     transfer(_student, milestones[_title].reward);
     emit MilestoneAwarded(_student, milestones[_title].reward, _title, milestones[_title].tags);
   }
